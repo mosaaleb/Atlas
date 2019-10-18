@@ -38,7 +38,7 @@
 
 
 /* checkbox */
-.onoffswitch {
+/* .onoffswitch {
   position: relative; width: 90px;
   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
@@ -82,4 +82,4 @@
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 0px; 
-}
+} */
