@@ -1,45 +1,59 @@
 import 'webpack-icons-installer';
 import '../css/main.css';
 
-const weatherObjectMock = {
-  coord: {
-    lon: -0.13,
-    lat: 51.51
-  },
-  weather: [{
-    id: 300,
-    main: 'Drizzle',
-    description: 'light intensity drizzle',
-    icon: '09d'
-  }],
-  base: 'stations',
-  main: {
-    temp: 280.32,
-    pressure: 1012,
-    humidity: 81,
-    temp_min: 279.15,
-    temp_max: 281.15
-  },
-  visibility: 10000,
-  wind: {
-    speed: 4.1,
-    deg: 80
-  },
-  clouds: {
-    all: 90
-  },
-  dt: 1485789600,
-  sys: {
-    type: 1,
-    id: 5091,
-    message: 0.0103,
-    country: 'GB',
-    sunrise: 1485762037,
-    sunset: 1485794875
-  },
-  id: 2643743,
-  name: 'London',
-  cod: 200
+const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+
+const getURL = (url) => {
+  return new Promise((resolve, reject) => {
+    const request = new XMLHttpRequest();
+    request.open('GET', url);
+
+    request.onload = () => {
+      resolve(request.response);
+    };
+
+    request.onerror = () => {
+      reject(Error(request.statusText));
+    };
+
+    request.responseType = 'json';
+    request.send();
+  });
 };
 
-export default weatherObjectMock;
+getURL(requestURL).then((data) => {
+  const header = document.querySelector('#test header');
+  const textElement = document.createElement('p');
+  textElement.textContent = data.squadName;
+  header.appendChild(textElement);
+});
+// catch((error) => {
+//   console.log('Error is:' + error.message);
+// });
+
+// const header = document.querySelector('#test header');
+
+// const request = new XMLHttpRequest();
+
+// request.open('GET', requestURL);
+
+// request.responseType = 'json';
+// request.send();
+
+// const populateHeader = (obj) => {
+//   const squadName = document.createElement('h1');
+//   const info = document.createElement('h2');
+//   squadName.textContent = obj.squadName;
+//   info.textContent = `Hometown: ${obj.homeTown} & formed in ${obj.formed}`;
+//   header.append(squadName);
+//   header.append(info);
+// };
+
+// request.onload = () => {
+//   const superHeroes = request.response;
+//   populateHeader(superHeroes);
+// };
+
+// window.onload = () => {
+
+// };
