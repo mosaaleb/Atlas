@@ -1,29 +1,19 @@
 import 'webpack-icons-installer';
 import '../css/main.css';
+import APIService from './lib/apiService';
+import View from './lib/view';
 
-const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+const weatherApiEndPoint = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=0c63e66e39bfd78722433b4fbbd6c19b';
 
-const getURL = (url) => new Promise((resolve, reject) => {
-  const request = new XMLHttpRequest();
-  request.open('GET', url);
-  request.responseType = 'json';
+const loadWeatherData = (endpoint) => {
+  APIService.getWeatherData(endpoint)
+    .then((weatherData) => {
+      View.update(weatherData);
+    })
+    .catch((error) => {
+      const errors = document.querySelector('#errors');
+      errors.textContent = error.message;
+    });
+};
 
-  request.onload = () => {
-    resolve(request.response);
-  };
-
-  request.onerror = () => {
-    reject(Error('There was a network error'));
-  };
-
-  request.responseType = 'json';
-  request.send();
-});
-
-
-getURL(requestURL).then((data) => {
-  const header = document.querySelector('#test header');
-  const textElement = document.createElement('p');
-  textElement.textContent = data.squadName;
-  header.appendChild(textElement);
-});
+loadWeatherData(weatherApiEndPoint);
