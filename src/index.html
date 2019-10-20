@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <div id="errors"></div>
   <main class="h-screen overflow-auto rainy-bg bg-cover text-gray-200 font-base py-6">
 
     <section class="top-section px-10">
@@ -25,15 +26,17 @@
         <i class="fa fa-search text-2xl font-light"></i>
       </div>
       <section>
-        <p class="text-shadow-xl text-center" style="font-size: 30vh;">05&#176;</p>
+        <p class="text-shadow-xl text-center text-9xl">
+          <span id="temp">05</span>&#176;
+        </p>
         <div class="flex justify-between">
           <div>
-            <p class="text-5xl">Cairo</p>
+            <p class="text-5xl" id="city">Cairo</p>
             <p class="text-xl">Monday, 10 September</p>
           </div>
           <div>
-            <p class="text-5xl"><i class="fa fa-cloud"></i></p>
-            <p class="text-xl">Rainy</p>
+            <p class="text-5xl" id="weather-icon"><i class="fa fa-cloud"></i></p>
+            <p class="text-xl" id="weather-condition">Rainy</p>
           </div>
         </div>
       </section>
@@ -44,15 +47,15 @@
       <div class="flex justify-between">
         <div>
           <p class="">Humidity</p>
-          <p class="">UV index</p>
+          <p class="">Pressure</p>
           <p class="">Cloudy</p>
           <p class="">Wind</p>
         </div>
         <div>
-          <p class="">50%</p>
-          <p class="">0</p>
-          <p class="">100%</p>
-          <p class="">12Km/h</p>
+          <p class="" id="humidity">50%</p>
+          <p class="" id="pressure">0</p>
+          <p class="" id="cloud-value">100%</p>
+          <p class="" id="wind-speed">12Km/h</p>
         </div>
       </div>
     </section>
