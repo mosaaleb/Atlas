@@ -18,7 +18,17 @@ const config = {
         test: /\.(jpe?g|png|svg|gif)/,
         loader: 'file-loader',
         options: {
-          name: 'images/[name].[ext]'
+          name: '[name].[ext]',
+          outputPath: 'images'
+        }
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader',
+        options: {
+          limit: 8192,
+          name:'[name].[ext]',
+          outputPath:'icons'
         }
       }
     ]

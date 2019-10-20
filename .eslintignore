@@ -1,5 +1,5 @@
-/dist/main.js
-/webpack.config.js
-/postcss.config.js
-/tailwind.config.js
-/initial-config.config.js
+dist/main.js
+webpack.config.js
+postcss.config.js
+tailwind.config.js
+tailwindcss-config.js
