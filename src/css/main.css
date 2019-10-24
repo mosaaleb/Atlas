@@ -25,8 +25,12 @@
   }
 }
 
+
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,500,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Proza+Libre:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Eczar&display=swap');
 
 .rainy-bg {
   background-image: url(../images/cloudy11.jpg);
