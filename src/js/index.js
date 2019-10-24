@@ -1,5 +1,5 @@
-// TODO: - [ ] implement search feature
-// TODO: - [ ] validate input from search
+// TODO: - [x] implement search feature
+// TODO: - [x] validate input from search
 
 
 import 'webpack-icons-installer';
@@ -19,6 +19,9 @@ const loadWeatherData = (endpoint) => {
   APIService.getWeatherData(endpoint)
     .then((weatherData) => {
       View.update(weatherData);
+    }).catch(() => {
+      setWeatherApiEndPoint('cairo');
+      loadWeatherData(weatherApiEndPoint);
     });
 };
 
@@ -31,6 +34,6 @@ searchInput.addEventListener('keyup', (event) => {
     event.preventDefault();
     setWeatherApiEndPoint(searchInput.value);
     loadWeatherData(weatherApiEndPoint);
-    searchInput.value.reset();
+    searchInput.value = '';
   }
 });
