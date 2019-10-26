@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 
+
 @responsive {
   .text-shadow {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.10);
@@ -47,7 +48,8 @@
 
 
 /* checkbox */
-/* .onoffswitch {
+
+.onoffswitch {
   position: relative; width: 90px;
   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
@@ -91,4 +93,4 @@
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 0px; 
-} */
+}
