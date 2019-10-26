@@ -1,4 +1,5 @@
 import Temp from './temperatureUtil';
+import Controller from './controller';
 
 const View = (() => {
   const temperature = document.querySelector('#temp');
@@ -12,8 +13,8 @@ const View = (() => {
 
   const update = (weatherData) => {
     const iconUrl = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
-
-    temperature.textContent = Temp.toCelsius(weatherData.main.temp);
+    const unit = Controller.getSelectedTempUnit();
+    temperature.textContent = Temp.currentTemp(weatherData.main.temp, unit);
     city.textContent = weatherData.name;
     weatherIcon.src = iconUrl;
     weatherIcon.height = '200';

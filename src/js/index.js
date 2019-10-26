@@ -1,11 +1,15 @@
 // TODO: - [x] implement search feature
 // TODO: - [x] validate input from search
+// TODO: - [ ] show error messages
 
 
 import 'webpack-icons-installer';
 import '../css/main.css';
 import APIService from './lib/apiService';
 import View from './lib/view';
+import UI from './lib/ui';
+
+UI.init();
 
 const AppId = '0c63e66e39bfd78722433b4fbbd6c19b';
 const defaultSearchCity = 'Cairo';
