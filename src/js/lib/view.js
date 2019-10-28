@@ -2,30 +2,33 @@ import Temp from './temperatureUtil';
 import Controller from './controller';
 
 const View = (() => {
-  const temperature = document.querySelector('#temp');
   const city = document.querySelector('#city');
-  const weatherIcon = document.querySelector('#weather-icon');
-  const weatherCondition = document.querySelector('#weather-condition');
   const humidity = document.querySelector('#humidity');
   const pressure = document.querySelector('#pressure');
-  const cloudValue = document.querySelector('#cloud-value');
   const windSpeed = document.querySelector('#wind-speed');
+  const cloudValue = document.querySelector('#cloud-value');
+  const currentDate = document.querySelector('#date');
+  const temperature = document.querySelector('#temp');
+  const weatherIcon = document.querySelector('#weather-icon');
+  const weatherCondition = document.querySelector('#weather-condition');
 
-  const update = (weatherData) => {
+  const receive = (weatherData) => {
     const iconUrl = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
     const unit = Controller.getSelectedTempUnit();
-    temperature.textContent = Temp.currentTemp(weatherData.main.temp, unit);
+
     city.textContent = weatherData.name;
     weatherIcon.src = iconUrl;
     weatherIcon.height = '200';
-    weatherCondition.textContent = weatherData.weather[0].description;
-    humidity.textContent = weatherData.main.humidity;
     pressure.textContent = weatherData.main.pressure;
-    cloudValue.textContent = weatherData.clouds.all;
+    humidity.textContent = weatherData.main.humidity;
     windSpeed.textContent = weatherData.wind.speed;
+    cloudValue.textContent = weatherData.clouds.all;
+    currentDate.textContent = new Date(Number(weatherData.dt) * 1000).toDateString();
+    temperature.textContent = Temp.currentTemp(weatherData.main.temp, unit);
+    weatherCondition.textContent = weatherData.weather[0].description;
   };
 
-  return { update };
+  return { receive };
 })();
 
 export default View;
