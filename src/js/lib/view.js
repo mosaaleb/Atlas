@@ -6,6 +6,7 @@ const View = (() => {
   const humidity = document.querySelector('#humidity');
   const pressure = document.querySelector('#pressure');
   const windSpeed = document.querySelector('#wind-speed');
+  const preloader = document.getElementById('preloader');
   const cloudValue = document.querySelector('#cloud-value');
   const currentDate = document.querySelector('#date');
   const temperature = document.querySelector('#temp');
@@ -27,8 +28,18 @@ const View = (() => {
     temperature.textContent = Temp.currentTemp(weatherData.main.temp, unit);
     weatherCondition.textContent = weatherData.weather[0].description;
   };
+  const hidePreloader = () => {
+    preloader.classList.add('opacity-0', 'pointer-events-none');
+  };
 
-  return { receive };
+  const showPreloader = () => {
+    preloader.classList.remove('opacity-0', 'pointer-events-none');
+  };
+
+
+  return {
+    receive, hidePreloader, showPreloader
+  };
 })();
 
 export default View;
