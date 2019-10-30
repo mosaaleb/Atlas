@@ -13,6 +13,10 @@ module.exports = {
         '8xl' : '8rem',
         '9xl' : '10rem',
         '10xl': '12rem'
+      },
+      inset: {
+        'unit': '1%',
+        'quarter': '25%'
       }
     }
   },
