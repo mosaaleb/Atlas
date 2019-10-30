@@ -6,7 +6,6 @@ const APIService = (() => {
         resolve(data);
       })
       .catch((error) => {
-        console.log("error 1 happend");
         reject(Error(error));
       });
   });
