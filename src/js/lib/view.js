@@ -3,10 +3,11 @@ import Controller from './controller';
 
 const View = (() => {
   const city = document.querySelector('#city');
+  const errorBox = document.getElementById('error');
   const humidity = document.querySelector('#humidity');
   const pressure = document.querySelector('#pressure');
-  const windSpeed = document.querySelector('#wind-speed');
   const preloader = document.getElementById('preloader');
+  const windSpeed = document.querySelector('#wind-speed');
   const cloudValue = document.querySelector('#cloud-value');
   const currentDate = document.querySelector('#date');
   const temperature = document.querySelector('#temp');
@@ -36,9 +37,17 @@ const View = (() => {
     preloader.classList.remove('opacity-0', 'pointer-events-none');
   };
 
+  const alertMessage = (message) => {
+    errorBox.firstChild.textContent = message;
+    errorBox.classList.remove('invisible');
+  };
+
+  const hideMessage = () => {
+    errorBox.classList.add('invisible');
+  };
 
   return {
-    receive, hidePreloader, showPreloader
+    receive, hidePreloader, showPreloader, alertMessage, hideMessage
   };
 })();
 
