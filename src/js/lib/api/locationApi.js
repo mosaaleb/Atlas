@@ -11,6 +11,7 @@ const LocationApi = (() => {
         resolve(cityData);
       })
       .catch((error) => {
+        // TODO: blocked by adblock
         reject(Error(error));
       });
   });

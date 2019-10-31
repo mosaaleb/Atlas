@@ -3,10 +3,10 @@
 // TODO: - [x] Preloader
 // TODO: - [x] Input
 // TODO: - [x] Show error messages
-// TODO: - [ ] Background image changed based on weather condition
-// document.body.style.backgroundImage = "url('img_tree.png')";
+// TODO: - [x] Handle conversion between temp units
+// TODO: - [x] Background image changed based on weather condition
 // TODO: - [ ] Handle the case where location api is blocked by adblock
-// TODO: - [ ] Handle conversion between temp units
+// TODO: - [ ] Add shake effect to search button when typing
 
 import '../css/main.css';
 import '../images/spinner.svg';
@@ -14,5 +14,5 @@ import 'webpack-icons-installer';
 import UI from './lib/ui';
 import WeatherApi from './lib/api/weatherApi';
 
-UI.init();
+UI.bindListeners();
 WeatherApi.loadWeatherData();
