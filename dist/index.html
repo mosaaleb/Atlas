@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="pt-0">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Atlas</title>
+</head>
+
+<body>
+  <div id="error" class="flex justify-between w-1/2 p-2 fixed top-unit left-quarter bg-red-300 rounded z-20 text-red-700 border border-red-400 invisible font-thin font-proza shadow">
+    <p id="message"></p>
+    <i class="fa fa-close pt-1 cursor-pointer hover:text-red-900" id="close-message"></i>
+  </div>
+
+  <div id="preloader" class="flex align-middle justify-center h-screen fixed top-0 left-0 w-full bg-indigo-900 z-30">
+    <img src="images/spinner.svg" alt="spinner">
+  </div>
+
+  <main class="h-screen overflow-auto bg-cover text-gray-200 font-proza bg-center" id="hero">
+    <section class="top-section px-10 pb-5">
+
+      <header class="flex justify-between items-center h-20">
+        <div class="logo">
+          <p class="text-2xl font-bold hover:underline"><a href="#">Atlas.IO</a></p>
+        </div>
+        <div class="border-b border-gray-200 w-1/2 flex items-center px-3 pb-1">
+          <input class=" bg-transparent border-none w-full leading-tight focus:outline-none text-xl"
+          type="text" placeholder="City" id="search" autocomplete="off">
+          <i class="fa fa-search fa-lg pb-2 cursor-pointer" id="search-icon"></i>
+        </div>
+
+        <div class="switch z-10 font-bold">
+          <input type="checkbox" id="switch" class="appearance-none w-20 h-8 border border-gray-200 rounded-full relative outline-none cursor-pointer">
+        </div>
+      </header>
+    
+      <section>
+        <div class="text-shadow-xl text-center text-5xl leading-snug text-10xl h-30">
+          <p id="temp"></p>
+        </div>
+        <div class="flex justify-between">
+          <div>
+            <p class="text-5xl h-16" id="city"></p>
+            <p class="text-md" id="date"></p>
+          </div>
+          <div>
+            <p class="h-16"><img src="#" id="weather-icon" alt="Weather Icon" class="h-full float-right"></p>
+            <p class="text-md float-right" id="weather-condition"></p>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <section class="bottom-section overlay px-10 py-5">
+      <h3 class="text-2xl font-bold mb-3">Weather Details</h3>
+      <div class="flex justify-between">
+        <div>
+          <p class="pb-2">Humidity</p>
+          <p class="pb-2">Pressure</p>
+          <p class="pb-2">Cloudy</p>
+          <p class="pb-2">Wind</p>
+        </div>
+
+        <div>
+          <p class="pb-2" id="humidity"></p>
+          <p class="pb-2" id="pressure"></p>
+          <p class="pb-2" id="cloud-value"></p>
+          <p class="pb-2" id="wind-speed"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+<script type="text/javascript" src="main.js"></script></body>
+
+</html>
