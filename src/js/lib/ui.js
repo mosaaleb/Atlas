@@ -25,6 +25,13 @@ const UI = (() => {
     searchInput.addEventListener('keyup', (event) => {
       if (event.keyCode === 13) {
         search();
+      } else {
+        searchButton.animate([
+          { transform: 'translate3d(-1px, 3px, 0)' },
+          { transform: 'translate3d(2px, -3px, 0)' },
+          { transform: 'translate3d(-2px, 3px, 0)' },
+          { transform: 'translate3d(4px, -3px, 0)' }
+        ], { duration: 400 });
       }
     });
     searchButton.addEventListener('click', search);

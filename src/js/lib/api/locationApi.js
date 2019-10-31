@@ -5,15 +5,13 @@ const LocationApi = (() => {
   const baseURL = 'http://api.ipstack.com/check';
   const cityApiEndPoint = `${baseURL}?access_key=${accessKey}`;
 
-  const defaultCity = { city: 'Cairo' };
-
   const loadCityData = () => new Promise((resolve) => {
     APIService.getData(cityApiEndPoint)
       .then((cityData) => {
         resolve(cityData);
       })
       .catch(() => {
-        resolve(defaultCity);
+        resolve({ city: 'Cairo' });
       });
   });
 
