@@ -2,6 +2,9 @@
 
 > A javascript powered weather Applcation.
 
+#### Live Version
+[Go](https://xenodochial-carson-49ee2c.netlify.com/)
+
 #### Installation
 ```
 git clone git@github.com:mosaaleb/Atlas.git
@@ -13,7 +16,7 @@ npm run build-prod
 ```
 
 #### Description
-
+The appliaction is built through using multiple api calls using **promises**.
 
 #### Tech Used
 - [webpack](https://webpack.js.org/)
