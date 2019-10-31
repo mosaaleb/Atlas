@@ -1,9 +1,9 @@
 import APIService from './apiService';
 
 const LocationApi = (() => {
-  const accessKey = '34b475c51c290415bbbbd96de61fb8d0';
-  const baseURL = 'https://api.ipstack.com/check';
-  const cityApiEndPoint = `${baseURL}?access_key=${accessKey}`;
+  const appId = '3b0876ed-be58-4577-b790-bb73bd1fc0eb';
+  const baseURL = 'https://api.ipfind.com';
+  const cityApiEndPoint = `${baseURL}/me?auth=${appId}`;
 
   const loadCityData = () => new Promise((resolve) => {
     APIService.getData(cityApiEndPoint)

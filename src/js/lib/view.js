@@ -33,7 +33,7 @@ const View = (() => {
   };
 
   const receive = (weatherData) => {
-    const iconUrl = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
+    const iconUrl = `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
 
     city.textContent = weatherData.name;
     weatherIcon.src = iconUrl;
