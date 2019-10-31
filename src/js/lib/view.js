@@ -8,10 +8,29 @@ const View = (() => {
   const preloader = document.getElementById('preloader');
   const windSpeed = document.querySelector('#wind-speed');
   const cloudValue = document.querySelector('#cloud-value');
+  const heroSection = document.querySelector('#hero');
   const currentDate = document.querySelector('#date');
   const temperature = document.querySelector('#temp');
   const weatherIcon = document.querySelector('#weather-icon');
   const weatherCondition = document.querySelector('#weather-condition');
+
+  const weatherImages = {
+    Ash: 'mist.jpg',
+    Fog: 'mist.jpg',
+    Mist: 'mist.jpg',
+    Rain: 'rainy.jpg',
+    Snow: 'snow.jpg',
+    Haze: 'mist.jpg',
+    Dust: 'mist.jpg',
+    Sand: 'mist.jpg',
+    Smoke: 'mist.jpg',
+    Clear: 'clear.jpeg',
+    Squall: 'snow.jpg',
+    Clouds: 'cloudy.jpg',
+    Tornado: 'tornado.jpg',
+    Drizzle: 'rainy.jpg',
+    Thunderstorm: 'thunderstorm.jpg'
+  };
 
   const receive = (weatherData) => {
     const iconUrl = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
@@ -26,11 +45,16 @@ const View = (() => {
     currentDate.textContent = new Date(Number(weatherData.dt) * 1000).toDateString();
     temperature.textContent = Temp.currentTemp(weatherData.main.temp);
     weatherCondition.textContent = weatherData.weather[0].description;
+    const mainCondition = weatherData.weather[0].main;
+    import(`../../images/${weatherImages[mainCondition]}`)
+      .then((image) => {
+        heroSection.style.backgroundImage = `url(${image.default})`;
+      });
   };
 
-  const changeTempUnit = (isCurrentCelsius) => {
+  const changeTempUnit = (isCelsiusChecked) => {
     const currentTemp = Number(temperature.textContent);
-    temperature.textContent = (isCurrentCelsius) ? Temp.toFah(currentTemp) : Temp.toCel(currentTemp);
+    temperature.textContent = isCelsiusChecked ? Temp.toCel(currentTemp) : Temp.toFah(currentTemp);
   };
 
   const hidePreloader = () => {
@@ -51,7 +75,12 @@ const View = (() => {
   };
 
   return {
-    receive, hidePreloader, showPreloader, alertMessage, hideMessage, changeTempUnit
+    receive,
+    hidePreloader,
+    showPreloader,
+    alertMessage,
+    hideMessage,
+    changeTempUnit
   };
 })();
 
