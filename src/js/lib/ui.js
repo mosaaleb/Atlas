@@ -5,8 +5,8 @@ import Temp from './temperatureUtil';
 const UI = (() => {
   const searchInput = document.getElementById('search');
   const closeMessage = document.getElementById('close-message');
-  const checkBoxTempUnit = document.getElementById('switch');
   const searchButton = document.getElementById('search-icon');
+  const checkBoxTempUnit = document.getElementById('switch');
 
   const search = () => {
     View.hideMessage();
