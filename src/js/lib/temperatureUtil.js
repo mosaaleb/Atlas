@@ -4,6 +4,12 @@ const Temp = (() => {
     FAHERNHEIT: 'f'
   };
 
+  let activeTempUnit = TempUnits.CELSIUS;
+
+  const setActiveTempUnit = (isCelsuis) => {
+    activeTempUnit = (isCelsuis === true) ? TempUnits.CELSIUS : TempUnits.FAHERNHEIT;
+  };
+
   const toCelsius = (kelvin) => Math.round(kelvin - 273.15);
 
   const toFahrenheit = (kelvin) => {
@@ -11,14 +17,14 @@ const Temp = (() => {
     return Math.round(celsius * (9 / 5) + 32);
   };
 
-  const currentTemp = (kelvin, unit) => {
-    if (unit === 'f') {
+  const currentTemp = (kelvin) => {
+    if (activeTempUnit === TempUnits.FAHERNHEIT) {
       return toFahrenheit(kelvin);
     }
     return toCelsius(kelvin);
   };
 
-  return { currentTemp, TempUnits };
+  return { currentTemp, TempUnits, setActiveTempUnit };
 })();
 
 export default Temp;

@@ -1,17 +1,17 @@
-import Controller from './controller';
 import View from './view';
 import WeatherApi from './api/weatherApi';
+import Temp from './temperatureUtil';
 
 const UI = (() => {
   const searchInput = document.getElementById('search');
   const closeMessage = document.getElementById('close-message');
-  const checkBoxTempUnit = document.getElementById('myonoffswitch');
+  const checkBoxTempUnit = document.getElementById('switch');
 
   const init = () => {
     checkBoxTempUnit.addEventListener('click', () => {
-      const isChecked = checkBoxTempUnit.checked === true;
-      Controller.setSelectedTempUnit(isChecked);
-      // loadWeatherData();
+      const isCelsuis = checkBoxTempUnit.checked === false;
+      Temp.setActiveTempUnit(isCelsuis);
+      // TODO: loadWeatherData();
     });
     closeMessage.addEventListener('click', View.hideMessage);
     searchInput.addEventListener('keyup', (event) => {

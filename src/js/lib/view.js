@@ -1,5 +1,4 @@
 import Temp from './temperatureUtil';
-import Controller from './controller';
 
 const View = (() => {
   const city = document.querySelector('#city');
@@ -16,7 +15,6 @@ const View = (() => {
 
   const receive = (weatherData) => {
     const iconUrl = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
-    const unit = Controller.getSelectedTempUnit();
 
     city.textContent = weatherData.name;
     weatherIcon.src = iconUrl;
@@ -26,7 +24,7 @@ const View = (() => {
     windSpeed.textContent = weatherData.wind.speed;
     cloudValue.textContent = weatherData.clouds.all;
     currentDate.textContent = new Date(Number(weatherData.dt) * 1000).toDateString();
-    temperature.textContent = Temp.currentTemp(weatherData.main.temp, unit);
+    temperature.textContent = Temp.currentTemp(weatherData.main.temp);
     weatherCondition.textContent = weatherData.weather[0].description;
   };
   const hidePreloader = () => {
