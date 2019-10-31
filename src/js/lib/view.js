@@ -27,6 +27,12 @@ const View = (() => {
     temperature.textContent = Temp.currentTemp(weatherData.main.temp);
     weatherCondition.textContent = weatherData.weather[0].description;
   };
+
+  const changeTempUnit = (isCurrentCelsius) => {
+    const currentTemp = Number(temperature.textContent);
+    temperature.textContent = (isCurrentCelsius) ? Temp.toFah(currentTemp) : Temp.toCel(currentTemp);
+  };
+
   const hidePreloader = () => {
     preloader.classList.add('opacity-0', 'pointer-events-none');
   };
@@ -45,7 +51,7 @@ const View = (() => {
   };
 
   return {
-    receive, hidePreloader, showPreloader, alertMessage, hideMessage
+    receive, hidePreloader, showPreloader, alertMessage, hideMessage, changeTempUnit
   };
 })();
 
