@@ -6,8 +6,8 @@ const Temp = (() => {
 
   let activeTempUnit = TempUnits.CELSIUS;
 
-  const setActiveTempUnit = (isCelsuis) => {
-    activeTempUnit = (isCelsuis === true) ? TempUnits.CELSIUS : TempUnits.FAHRENHEIT;
+  const setActiveTempUnit = (isCelsius) => {
+    activeTempUnit = isCelsius ? TempUnits.CELSIUS : TempUnits.FAHRENHEIT;
   };
 
   const toCelsius = (kelvin) => Math.round(kelvin - 273.15);
@@ -23,10 +23,10 @@ const Temp = (() => {
     }
     return toCelsius(kelvin);
   };
-  // TODO: check values
-  const toFah = (celsuis) => Math.round((celsuis - 32) * (5 / 9));
 
-  const toCel = (fahrenheit) => Math.round(fahrenheit * (9 / 5) + 32);
+  const toCel = (fahrenheit) => Math.round((fahrenheit - 32) * (5 / 9));
+
+  const toFah = (celsius) => Math.round(celsius * (9 / 5) + 32);
 
   return {
     currentTemp, TempUnits, setActiveTempUnit, toFah, toCel

@@ -17,9 +17,9 @@ const UI = (() => {
 
   const bindListeners = () => {
     checkBoxTempUnit.addEventListener('click', () => {
-      const isCelsuis = checkBoxTempUnit.checked === false;
-      Temp.setActiveTempUnit(isCelsuis);
-      View.changeTempUnit(isCelsuis);
+      const isCelsius = checkBoxTempUnit.checked === false;
+      Temp.setActiveTempUnit(isCelsius);
+      View.changeTempUnit(isCelsius);
     });
     closeMessage.addEventListener('click', View.hideMessage);
     searchInput.addEventListener('keyup', (event) => {
