@@ -1,6 +1,6 @@
+import View from '../view';
 import APIService from './apiService';
 import LocationApi from './locationApi';
-import View from '../view';
 
 const WeatherApi = (() => {
   const appId = '0c63e66e39bfd78722433b4fbbd6c19b';

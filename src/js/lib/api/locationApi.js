@@ -5,14 +5,15 @@ const LocationApi = (() => {
   const baseURL = 'http://api.ipstack.com/check';
   const cityApiEndPoint = `${baseURL}?access_key=${accessKey}`;
 
-  const loadCityData = () => new Promise((resolve, reject) => {
+  const defaultCity = { city: 'Cairo' };
+
+  const loadCityData = () => new Promise((resolve) => {
     APIService.getData(cityApiEndPoint)
       .then((cityData) => {
         resolve(cityData);
       })
-      .catch((error) => {
-        // TODO: blocked by adblock
-        reject(Error(error));
+      .catch(() => {
+        resolve(defaultCity);
       });
   });
 

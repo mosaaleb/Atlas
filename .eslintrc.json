@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es2020": true
+        // "es6": true,
     },
     "extends": [
         "airbnb-base"
@@ -11,8 +12,10 @@
         "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
+        // "ecmaVersion": 2018,
         "ecmaVersion": 2020,
-        "sourceType": "module"
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
     },
     "rules": {
         "comma-dangle": ["error", "never"]

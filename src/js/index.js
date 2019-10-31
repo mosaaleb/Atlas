@@ -5,7 +5,7 @@
 // TODO: - [x] Show error messages
 // TODO: - [x] Handle conversion between temp units
 // TODO: - [x] Background image changed based on weather condition
-// TODO: - [ ] Handle the case where location api is blocked by adblock
+// TODO: - [x] Handle the case where location api is blocked by adblock
 // TODO: - [ ] Add shake effect to search button when typing
 
 import '../css/main.css';
