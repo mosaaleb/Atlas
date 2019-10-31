@@ -4,7 +4,7 @@ import LocationApi from './locationApi';
 
 const WeatherApi = (() => {
   const appId = '0c63e66e39bfd78722433b4fbbd6c19b';
-  const baseURL = 'http://api.openweathermap.org/data/2.5/weather';
+  const baseURL = 'https://api.openweathermap.org/data/2.5/weather';
 
   const loadWeatherData = (searchedCity = null) => {
     LocationApi.loadCityData()
