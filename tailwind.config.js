@@ -2,10 +2,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        base: ['Raleway', 'sans-serif'],
-        body: ['Work Sans', 'sans-serif'],
-        garamond: ['Cormorant Garamond', 'serif'],
-        proza: ['Proza Libre', 'sans-serif'],
         eczar: ['Eczar', 'serif']
       },
       fontSize: {
