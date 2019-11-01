@@ -1,6 +1,6 @@
 const APIService = (() => {
   const getData = (ApiEndPoint) => new Promise((resolve, reject) => {
-    fetch(ApiEndPoint)
+    fetch(ApiEndPoint, { mode: 'cors' })
       .then((response) => response.json())
       .then((data) => {
         resolve(data);

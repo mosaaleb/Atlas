@@ -22,7 +22,7 @@ The appliaction is built through using multiple api calls using **promises**.
 - [webpack](https://webpack.js.org/)
 - [tailwindcss](https://tailwindcss.com/)
 - [Weather API](https://openweathermap.org/api)
-- [IP Location API](https://ipfind.com/)
+- [IP Location API](https://geoipify.whoisxmlapi.com/api)
 
-#### Contributers
+#### Author
 - [Muhammad](https://github.com/mosaaleb)

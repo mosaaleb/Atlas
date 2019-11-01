@@ -9,7 +9,7 @@ const WeatherApi = (() => {
   const loadWeatherData = (searchedCity = null) => {
     LocationApi.loadCityData()
       .then((cityData) => {
-        const city = searchedCity || cityData.city;
+        const city = searchedCity || cityData.city || 'London';
         const weatherApiEndPoint = `${baseURL}?q=${city}&APPID=${appId}`;
         return APIService.getData(weatherApiEndPoint);
       }).then((weatherData) => {

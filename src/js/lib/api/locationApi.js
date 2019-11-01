@@ -1,14 +1,14 @@
 import APIService from './apiService';
 
 const LocationApi = (() => {
-  const appId = '3b0876ed-be58-4577-b790-bb73bd1fc0eb';
-  const baseURL = 'https://api.ipfind.com';
-  const cityApiEndPoint = `${baseURL}/me?auth=${appId}`;
+  const appId = 'at_fufvD7JzW7vgJA7rJGY74D1PuYzyy';
+  const baseURL = 'https://geoipify.whoisxmlapi.com/api';
+  const cityApiEndPoint = `${baseURL}/v1?apiKey=${appId}`;
 
   const loadCityData = () => new Promise((resolve) => {
     APIService.getData(cityApiEndPoint)
       .then((cityData) => {
-        resolve(cityData);
+        resolve(cityData.location);
       })
       .catch(() => {
         resolve({ city: 'London' });
