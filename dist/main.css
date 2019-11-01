@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Eczar&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Proza+Libre:400,500,700&display=swap);
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -543,6 +543,10 @@ img {
 
 .float-right {
   float: right;
+}
+
+.font-proza {
+  font-family: Proza Libre, sans-serif;
 }
 
 .font-thin {

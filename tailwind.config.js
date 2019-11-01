@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        eczar: ['Eczar', 'serif']
+        proza: ['Proza Libre', 'sans-serif'],
       },
       fontSize: {
         '7xl' : '5rem',

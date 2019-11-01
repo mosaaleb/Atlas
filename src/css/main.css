@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css?family=Eczar&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Proza+Libre:400,500,700&display=swap');
 
 @responsive {
   .text-shadow {
