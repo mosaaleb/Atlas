@@ -2,13 +2,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        base: ['Raleway', 'sans-serif'],
-        body: ['Work Sans', 'sans-serif']
+        proza: ['Proza Libre', 'sans-serif'],
       },
       fontSize: {
-        '7xl': '5rem',
-        '8xl': '10rem',
-        '9xl': '15rem',
+        '7xl' : '5rem',
+        '8xl' : '8rem',
+        '9xl' : '10rem',
+        '10xl': '12rem'
+      },
+      inset: {
+        'unit': '1%',
+        'quarter': '25%'
       }
     }
   },

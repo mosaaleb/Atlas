@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{14:function(o,p,n){o.exports=n.p+"images/tornado.jpg"}}]);
