@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c06fdb32-fbe8-4df7-adcc-fae35a55ecdc/deploy-status)](https://app.netlify.com/sites/xenodochial-carson-49ee2c/deploys)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
 ## :sun_with_face: Atlas :cloud:
 
 > A javascript powered weather Applcation.
