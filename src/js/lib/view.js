@@ -34,6 +34,7 @@ const View = (() => {
 
   const receive = (weatherData) => {
     const iconUrl = `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
+    const currentTemp = Temp.currentTemp(weatherData.main.temp).toString();
 
     city.textContent = weatherData.name;
     weatherIcon.src = iconUrl;
@@ -43,7 +44,7 @@ const View = (() => {
     windSpeed.textContent = weatherData.wind.speed;
     cloudValue.textContent = weatherData.clouds.all;
     currentDate.textContent = new Date(Number(weatherData.dt) * 1000).toDateString();
-    temperature.textContent = Temp.currentTemp(weatherData.main.temp);
+    temperature.textContent = currentTemp.padStart(2, '0');
     weatherCondition.textContent = weatherData.weather[0].description;
     const mainCondition = weatherData.weather[0].main;
     import(`../../images/${weatherImages[mainCondition]}`)
