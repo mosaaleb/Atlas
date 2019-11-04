@@ -49,7 +49,7 @@
   left: 0;
   width: 50%;
   height: 100%;
-  background-color: theme('colors.blue.700');
+  background-color: theme("colors.blue.700");
   border-top-left-radius: 9999px;
   border-bottom-left-radius: 9999px;
   content: "\2103";
@@ -58,10 +58,14 @@
 .switch input[type="checkbox"]:checked::after {
   right: 0;
   left: auto;
-  background-color: theme('colors.red.700');
+  background-color: theme("colors.red.700");
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 9999px;
   border-bottom-right-radius: 9999px;
   content: "\2109";
+}
+
+#temp::after {
+  content: "\18DE";
 }
