@@ -24,7 +24,7 @@ const View = (() => {
     Dust: 'mist.jpg',
     Sand: 'mist.jpg',
     Smoke: 'mist.jpg',
-    Clear: 'clear.jpeg',
+    Clear: 'clear.jpg',
     Squall: 'snow.jpg',
     Clouds: 'cloudy.jpg',
     Tornado: 'tornado.jpg',
