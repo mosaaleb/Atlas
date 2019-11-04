@@ -2,7 +2,7 @@ import APIService from './apiService';
 
 const LocationApi = (() => {
   const appId = 'at_fufvD7JzW7vgJA7rJGY74D1PuYzyy';
-  const baseURL = 'https://geoipify.whoisxmlapi.com/api';
+  const baseURL = 'https://api.ipify.org';
   const cityApiEndPoint = `${baseURL}/v1?apiKey=${appId}`;
 
   const loadCityData = () => new Promise((resolve) => {

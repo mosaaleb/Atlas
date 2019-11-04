@@ -12,6 +12,10 @@ module.exports = {
       },
       inset: {
         'unit': '1%',
+        '2units': '2%',
+        '3units': '3%',
+        '4units': '4%',
+        '5units': '5%',
         'quarter': '25%'
       }
     }
